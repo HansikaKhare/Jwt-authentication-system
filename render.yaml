@@ -1,0 +1,43 @@
+services:
+  # Backend Service (Spring Boot)
+  - type: web
+    name: jwt-auth-backend
+    env: java
+    region: oregon
+    plan: free
+    buildCommand: ./backend/mvnw clean package -DskipTests -f backend/pom.xml
+    startCommand: java -jar backend/target/*.jar
+    envVars:
+      - key: JAVA_VERSION
+        value: 24
+      - key: SPRING_PROFILES_ACTIVE
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
+    disk:
+      name: data
+      mountPath: /opt/render/project/.data
+      sizeGB: 1
+  # Frontend Service (Static Site)
+  - type: web
+    name: jwt-auth-frontend
+    env: static
+    region: oregon
+    plan: free
+    buildCommand: cd frontend && echo "Building frontend..."
+    staticPublishPath: ./frontend
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-XSS-Protection
+        value: 1; mode=block
+    envVars:
+      - key: API_BASE_URL
+        sync: false

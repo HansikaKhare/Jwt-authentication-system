@@ -1,5 +1,6 @@
 // API Configuration
-const API_BASE_URL = 'http://localhost:8080/api';
+// For production, replace with your Railway/Render backend URL
+const API_BASE_URL = window.API_CONFIG?.BASE_URL || 'http://localhost:8080/api';
 
 // Check if backend is accessible
 async function checkBackendConnection() {
