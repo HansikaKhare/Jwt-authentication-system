@@ -25,8 +25,10 @@ COPY --from=build /app/backend/target/*.jar app.jar
 # Expose port (Railway sets PORT env var)
 EXPOSE ${PORT:10000}
 
-# Set active profile
+# Set active profile AND PORT
 ENV SPRING_PROFILES_ACTIVE=production
+ENV PORT=${PORT:10000}
+ENV SERVER_PORT=${PORT:10000}
 
 # Run application
 ENTRYPOINT ["java", "-jar", "app.jar"]
