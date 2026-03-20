@@ -1,0 +1,18 @@
+[phases.setup]
+nixPkgs = ["jdk17", "maven", "nodejs-18"]
+
+[phases.install]
+cmds = [
+  "cd backend && mvn clean package -DskipTests",
+  "cd frontend && npm install && npm run build"
+]
+
+[phases.build]
+cmds = [
+  "echo 'Copying frontend to backend static resources...'",
+  "mkdir -p backend/target/classes/static",
+  "cp -r frontend/dist/* backend/target/classes/static/"
+]
+
+[start]
+cmd = "java -jar backend/target/*.jar"

@@ -2,29 +2,42 @@
 
 A complete authentication system built with Spring Boot (Java) backend and vanilla JavaScript frontend.
 
-## 🚀 Quick Deploy to Vercel
+## 🚀 Quick Deploy
 
-**Ready to deploy?** Check out these guides:
+### Deploy to Railway (Recommended - One Platform for Everything!) ⭐
 
-- 📖 **[Complete Deployment Guide](VERCEL_DEPLOYMENT_COMPLETE.md)** - Step-by-step instructions
-- ⚡ **[Quick Start Guide](VERCEL_QUICKSTART.md)** - Fast deployment in 15 minutes
-- ✅ **[Deployment Checklist](VERCEL_CHECKLIST.md)** - Verify every step
-- 🎨 **[Visual Guide](VERCEL_VISUAL_GUIDE.md)** - Architecture diagrams
-- 📦 **[Package Summary](VERCEL_PACKAGE_SUMMARY.md)** - Overview of all files
+**Railway hosts both frontend AND backend together!**
 
-### One-Click Deploy
+- 📖 **[Railway Quick Start](RAILWAY_QUICKSTART.md)** - Deploy in 10 minutes
+- 📘 **[Complete Railway Guide](RAILWAY_DEPLOY_GUIDE.md)** - Detailed instructions
 
 ```bash
-# Run the deployment script
-deploy-vercel.bat
+# Automated deployment
+npm install -g @railway/cli
+deploy-railway.bat
 
-# Or manually
-npm install -g vercel
-vercel login
-vercel
+# Or deploy from GitHub:
+# 1. Push code to GitHub
+# 2. Go to railway.app → New Project → Deploy from GitHub
+# 3. Add PostgreSQL database
+# 4. Set environment variables
+# 5. Deploy!
 ```
 
-**Note**: You'll need to deploy your backend first on Render or Railway. See guides above!
+**Benefits:**
+✅ Single platform for frontend + backend  
+✅ Automatic PostgreSQL database  
+✅ Auto-deploy on Git push  
+✅ Free $5 credit to start  
+✅ Simple setup - no complex config  
+
+---
+
+### Alternative: Vercel + Render/Railway
+
+- 📦 **[Vercel Deployment Package](VERCEL_PACKAGE_SUMMARY.md)** - Frontend on Vercel, Backend on Render/Railway
+
+**Note:** This requires TWO separate deployments (frontend on Vercel, backend elsewhere).
 
 ---
 
