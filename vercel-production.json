@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "name": "jwt-auth-frontend",
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "devCommand": "cd frontend && npm run dev",
+  "installCommand": "cd frontend && npm install",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://YOUR-BACKEND-URL.onrender.com/api/$1"
+    }
+  ],
+  "env": {
+    "VITE_API_BASE_URL": "https://YOUR-BACKEND-URL.onrender.com/api"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}

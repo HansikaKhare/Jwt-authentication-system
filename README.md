@@ -2,6 +2,32 @@
 
 A complete authentication system built with Spring Boot (Java) backend and vanilla JavaScript frontend.
 
+## 🚀 Quick Deploy to Vercel
+
+**Ready to deploy?** Check out these guides:
+
+- 📖 **[Complete Deployment Guide](VERCEL_DEPLOYMENT_COMPLETE.md)** - Step-by-step instructions
+- ⚡ **[Quick Start Guide](VERCEL_QUICKSTART.md)** - Fast deployment in 15 minutes
+- ✅ **[Deployment Checklist](VERCEL_CHECKLIST.md)** - Verify every step
+- 🎨 **[Visual Guide](VERCEL_VISUAL_GUIDE.md)** - Architecture diagrams
+- 📦 **[Package Summary](VERCEL_PACKAGE_SUMMARY.md)** - Overview of all files
+
+### One-Click Deploy
+
+```bash
+# Run the deployment script
+deploy-vercel.bat
+
+# Or manually
+npm install -g vercel
+vercel login
+vercel
+```
+
+**Note**: You'll need to deploy your backend first on Render or Railway. See guides above!
+
+---
+
 ## Features
 
 ✅ User Registration  

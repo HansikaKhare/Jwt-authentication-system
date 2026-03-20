@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -28,10 +29,12 @@ public class SecurityConfig {
     
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final CustomUserDetailsService customUserDetailsService;
+    private final Environment env;
     
-    public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter, CustomUserDetailsService customUserDetailsService) {
+    public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter, CustomUserDetailsService customUserDetailsService, Environment env) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.customUserDetailsService = customUserDetailsService;
+        this.env = env;
     }
     
     @Bean
@@ -76,7 +79,14 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:3000"));
+        
+        // Get allowed origins from environment variable or use defaults
+        String allowedOrigins = env.getProperty("cors.allowed.origins", 
+            "http://localhost:5173,http://localhost:3000");
+        
+        List<String> origins = Arrays.asList(allowedOrigins.split(","));
+        configuration.setAllowedOrigins(origins);
+        
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "X-Requested-With"));
         configuration.setExposedHeaders(List.of("Authorization"));
