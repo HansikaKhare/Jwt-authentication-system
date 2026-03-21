@@ -4,40 +4,42 @@ A complete authentication system built with Spring Boot (Java) backend and vanil
 
 ## 🚀 Quick Deploy
 
-### Deploy to Railway (Recommended - One Platform for Everything!) ⭐
+### Deploy to Render (Recommended - Best for Spring Boot!) ⭐
 
-**Railway hosts both frontend AND backend together!**
+**Render is purpose-built for Java/Spring Boot applications!**
 
-- 📖 **[Railway Quick Start](RAILWAY_QUICKSTART.md)** - Deploy in 10 minutes
-- 📘 **[Complete Railway Guide](RAILWAY_DEPLOY_GUIDE.md)** - Detailed instructions
+- 📖 **[Render Quick Start](RENDER_QUICKSTART.md)** - Deploy in 10 minutes
+- 📘 **[Complete Render Guide](RENDER_DEPLOY_GUIDE.md)** - Detailed instructions
 
 ```bash
-# Automated deployment
-npm install -g @railway/cli
-deploy-railway.bat
-
-# Or deploy from GitHub:
-# 1. Push code to GitHub
-# 2. Go to railway.app → New Project → Deploy from GitHub
-# 3. Add PostgreSQL database
-# 4. Set environment variables
-# 5. Deploy!
+# Automated deployment with render.yaml
+# 1. Go to render.com
+# 2. Sign up with GitHub
+# 3. New + → Blueprint
+# 4. Connect your repository
+# 5. Click "Apply"
+# Done! Backend + Database deployed automatically!
 ```
 
 **Benefits:**
-✅ Single platform for frontend + backend  
-✅ Automatic PostgreSQL database  
+✅ Native Java/Spring Boot support  
+✅ Managed PostgreSQL included  
 ✅ Auto-deploy on Git push  
-✅ Free $5 credit to start  
-✅ Simple setup - no complex config  
+✅ Free tier (750 hours/month)  
+✅ Simple blueprint deployment  
+✅ Better than Railway for Java apps!  
 
 ---
 
-### Alternative: Vercel + Render/Railway
+### Alternative Options
 
-- 📦 **[Vercel Deployment Package](VERCEL_PACKAGE_SUMMARY.md)** - Frontend on Vercel, Backend on Render/Railway
+#### Railway (Docker-based)
+- 📘 [Railway Emergency Fix](RAILWAY_EMERGENCY_FIX.md) - Docker deployment guide
+- Good alternative if you prefer Docker
 
-**Note:** This requires TWO separate deployments (frontend on Vercel, backend elsewhere).
+#### Vercel + Render/Railway
+- 📦 [Vercel Package Summary](VERCEL_PACKAGE_SUMMARY.md) - Frontend on Vercel, Backend elsewhere
+- Split deployment (frontend static, backend API)
 
 ---
 
