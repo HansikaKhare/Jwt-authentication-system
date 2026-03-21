@@ -2,6 +2,47 @@
 
 A complete authentication system built with Spring Boot (Java) backend and vanilla JavaScript frontend.
 
+## 🚀 Quick Deploy
+
+### Deploy to Render (Recommended - Best for Spring Boot!) ⭐
+
+**Render is purpose-built for Java/Spring Boot applications!**
+
+- 📖 **[Render Quick Start](RENDER_QUICKSTART.md)** - Deploy in 10 minutes
+- 📘 **[Complete Render Guide](RENDER_DEPLOY_GUIDE.md)** - Detailed instructions
+
+```bash
+# Automated deployment with render.yaml
+# 1. Go to render.com
+# 2. Sign up with GitHub
+# 3. New + → Blueprint
+# 4. Connect your repository
+# 5. Click "Apply"
+# Done! Backend + Database deployed automatically!
+```
+
+**Benefits:**
+✅ Native Java/Spring Boot support  
+✅ Managed PostgreSQL included  
+✅ Auto-deploy on Git push  
+✅ Free tier (750 hours/month)  
+✅ Simple blueprint deployment  
+✅ Better than Railway for Java apps!  
+
+---
+
+### Alternative Options
+
+#### Railway (Docker-based)
+- 📘 [Railway Emergency Fix](RAILWAY_EMERGENCY_FIX.md) - Docker deployment guide
+- Good alternative if you prefer Docker
+
+#### Vercel + Render/Railway
+- 📦 [Vercel Package Summary](VERCEL_PACKAGE_SUMMARY.md) - Frontend on Vercel, Backend elsewhere
+- Split deployment (frontend static, backend API)
+
+---
+
 ## Features
 
 ✅ User Registration  
